@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plain privacy policy</title>
+  <meta name="description" content="What Plain keeps, who it goes to, and how to delete it.">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" href="../icon.png">
+  <link rel="apple-touch-icon" href="../icon.png">
+</head>
+<body>
+<main>
+  <h1>Privacy policy</h1>
+  <p class="lede">Plain, the calorie and protein app. Last updated 26 October 2026.</p>
+
+  <h2>Who runs Plain</h2>
+  <p>Plain is made by Luc Haji, an individual developer in the United States. Contact: <a href="mailto:luchaji07@gmail.com">luchaji07@gmail.com</a>.</p>
+
+  <h2>What stays on your phone</h2>
+  <p>Your food log, weigh-ins, saved meals and plan are stored on your iPhone. You can use Plain without an account, and then nothing you log leaves the phone, except a barcode when you scan one (below). Meal photo thumbnails stay on the phone only, even when you’re signed in.</p>
+
+  <h2>If you sign in</h2>
+  <p>Sign in with Apple gives Plain an Apple user ID and an email address (it can be a private relay address Apple forwards). A copy of your log is then kept on Plain’s database to back it up and sync it between your devices:</p>
+  <ul>
+    <li>food entries (name, time, calories, protein, carbs, fat, portion), saved meals. An entry logged from a dining hall also keeps where it came from (see “Dining hall menus”);</li>
+    <li>weigh-ins;</li>
+    <li>your school, if you pick one (see “Your school”);</li>
+    <li>your plan: birth date, sex (or “prefer not to say”), height, activity and whether you lift, goal and pace, units, and the targets Plain computes, with each week’s check-in, plus your reminder time and when you agreed to AI estimates;</li>
+    <li>for each AI estimate: the result Plain returned, whether you sent a photo or text, and its cost and timing. Never the photo or the text itself.</li>
+  </ul>
+  <p>The database is Supabase, hosted in the United States (AWS us-east-1). It is used only to run Plain.</p>
+
+  <h2>Your school</h2>
+  <p>Plain asks which school you go to, in setup or once in the log: Tufts, another school from a list, a school you type in, or “Not in college”, which stores no school. The school list is searched on your phone. What Plain stores is the school’s name, its federal school ID when it comes from the list, and whether Plain has dining menus for it. It stays on your phone, and if you sign in it is backed up and synced with your account like the rest of your plan. It is used to show your school’s dining menus and to decide which schools Plain adds next. Plain does not use your location or your email address to work out your school. You can change it any time in Settings → About you → School, and choosing “Not in college” removes it.</p>
+
+  <h2>Dining hall menus</h2>
+  <p>If you pick Tufts, Plain can show what Tufts Dining’s halls are serving. The menus and nutrition numbers come from what Tufts Dining publishes through Nutrislice. When a listing is missing or impossible, Plain uses a typical value from USDA FoodData Central or from Tufts’ own plain version of the dish, and some items use the product’s label. Menus are fetched by Plain’s server a couple of times a day, not by your phone. Your phone only asks Plain’s server, which sends menus only to signed-in accounts. Nothing about you is sent to Tufts or Nutrislice. To limit abuse, Plain’s server counts each account’s menu requests per hour and deletes the counts within a day.</p>
+  <p>When you log from a dining hall, the entry stores which hall, the date and the meal, and for each dish a reference to it, its station, the amount you took, where its numbers came from, and its place in that meal’s Likely picks if it was one. Likely picks are worked out on your phone from what you’ve logged; nothing extra is sent for them. That is the same entry data as any other food entry, and it follows the same rules above. Plain does not track where you are, and logging at a hall does not use location.</p>
+  <p>Plain is an independent app. It is not affiliated with or endorsed by Tufts, Tufts Dining or Nutrislice.</p>
+
+  <h2>AI estimates</h2>
+  <p>Only when you ask for one, and only after you agree in the app, Plain sends the photo or description (and any detail you add) through its server to Anthropic, which makes the Claude model, to estimate the food. By default Anthropic does not train on this data and deletes it within 30 days. Plain does not store the photo. You can turn AI estimates off in Settings at any time.</p>
+
+  <h2>Apple Health</h2>
+  <p>If you connect Apple Health, Plain writes your entries and weigh-ins there and reads your weight from other apps for your trend. What Plain reads from Apple Health is never uploaded, except the height, birth date and sex you confirm during setup and the targets computed from them. Nothing from Apple Health is sent to Anthropic, used for advertising, or stored in iCloud by Plain.</p>
+
+  <h2>Barcodes</h2>
+  <p>A scanned barcode is looked up in Open Food Facts directly from your phone and, if needed, in USDA FoodData Central through Plain’s server. Only the barcode number is sent. To limit abuse, Plain’s server counts lookups per network address for one hour.</p>
+
+  <h2>The beta</h2>
+  <p>While Plain is in TestFlight, Luc reads the synced data, in totals and per tester, such as how often people log, how they use the dining hall menus, how weekly check-ins come out and how often AI estimates get edited, to decide what to build. That includes counts of which schools people pick, and a school is only counted publicly once at least five people have picked it. There are no analytics or advertising SDKs in Plain, no tracking across apps or websites, and no data is sold or shared for advertising. Apple shares TestFlight crash reports and feedback you choose to send.</p>
+
+  <h2>Who else gets data</h2>
+  <ul>
+    <li>Supabase: runs Plain’s server, which barcode, menu and AI estimate requests pass through, and stores the synced copy if you sign in.</li>
+    <li>Anthropic: receives a meal photo or description only when you ask for an estimate.</li>
+    <li>Apple: Sign in with Apple, Apple Health on your device, TestFlight.</li>
+    <li>Open Food Facts and USDA FoodData Central: receive a barcode number.</li>
+    <li>Tufts Dining and Nutrislice: publish the menus Plain reads. They receive nothing about you.</li>
+  </ul>
+  <p>Plain doesn’t share your data with anyone else, except if the law requires it.</p>
+
+  <h2>Keeping and deleting</h2>
+  <p>The synced copy is kept until you delete your account. Settings → Delete account removes everything on Plain’s server right away and revokes Sign in with Apple. Signed out, Settings → Delete all data wipes the phone. Either can also remove Plain’s entries from Apple Health. You can export your entries and weigh-ins as CSV from Settings first.</p>
+
+  <h2>Age</h2>
+  <p>Plain is for adults. Setup stops anyone under 18.</p>
+
+  <h2>Security and breaches</h2>
+  <p>Data travels encrypted. Each person’s synced rows are readable only with their own sign-in. Secret keys stay on the server, never in the app. If your data is ever exposed, Plain will tell you by email without unreasonable delay, as the FTC Health Breach Notification Rule requires.</p>
+
+  <h2>Changes</h2>
+  <p>If this policy changes, the new version will be posted here with a new date, and a meaningful change will be noted in the app or in its TestFlight notes.</p>
+
+  <footer>
+    <a href="../">Support</a>
+    <span>Plain is not medical advice.</span>
+  </footer>
+</main>
+</body>
+</html>
